@@ -29,6 +29,10 @@
                 color:black;
             }
 
+            .lineblock{
+                display: inline-block;
+            }
+
         </style>
 
     
@@ -68,6 +72,7 @@
         <table class="table">
   <thead class="bg-primary">
     <tr>
+      <th scope="col">ID</th>
       <th scope="col">Nome</th>
       <th scope="col">Telefone</th>
       <th scope="col">Origem</th>
@@ -81,12 +86,17 @@
      @foreach ($agendas as $agendas)
 
     <tr>
-      <th scope="row" >{{$agendas['nome']}}</th>
+      <th scope="row">{{$agendas['id']}}</th>
+      <td>{{$agendas['nome']}}</th>
       <td>{{$agendas['telefone']}}</td>
       <td>{{$agendas['origem']}}</td>
       <td>{{$agendas['data_contato']}}</td>
       <td>{{$agendas['observacao']}}</td>
-      <td><a type="button" class="btn btn-info" name="editar" value="editar" href="{{ url('/editar', $agendas->nome)}}">editar</a> &nbsp;&nbsp;  <button type="button" class="btn btn-info" name="editar" value="editar" href="{{ url('/excluir')}}">excluir</button></td>
+      <td><a type="button" class="btn btn-info" name="editar" value="editar" href="{{ url('/editar', $agendas->id)}}">editar</a> &nbsp;&nbsp;
+        <form action="/excluir/{{ $agendas->id }}" method="POST" class="lineblock">
+            @csrf
+            @method('DELETE')
+        <button type="submit" class="btn btn-info" name="excluir" value="excluir">excluir</button></td>
     </tr>
 
      @endforeach

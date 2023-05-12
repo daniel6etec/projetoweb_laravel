@@ -52,8 +52,8 @@
   
   <label for="exampleInputPassword1" class="form-label">Origem:</label><br>
   <select name="txtOrigem" class="form-control">
-<option value="Celular">Celular</option>
-<option value="Fixo">Telefone Fixo</option>
+<option value="0">Celular</option>
+<option value="1">Telefone Fixo</option>
   </select>
 
   <div class="mb-3"><br>

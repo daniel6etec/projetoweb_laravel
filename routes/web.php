@@ -24,10 +24,10 @@ Route::get('/consulta', function () { return view('consulta'); });
 
 Route::get('/consultar', [controllerAgendamentos::class, 'consultaragenda']);
 
-Route::get('/editar/{agendas}', [controllerAgendamentos::class, 'Editar']);
+Route::get('/editar/{id}', [controllerAgendamentos::class, 'Editar']);
 
-Route::get('/excluir', [controllerAgendamentos::class, 'DELETE']);
+Route::delete('/excluir/{id}', [controllerAgendamentos::class, 'DELETE']);
 
-Route::get('/atualizar', [controllerAgendamentos::class, 'UPDATE']);
+Route::put('/atualizar/{id}', [controllerAgendamentos::class, 'UPDATE']);
 
 

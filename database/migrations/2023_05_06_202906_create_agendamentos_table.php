@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('agendamentos', function (Blueprint $table) {
+            $table->id();
             $table->string('nome');
             $table->string('telefone');
-            $table->string('origem');
+            $table->integer('origem');
             $table->datetime('data_contato');
             $table->string('observacao');
         });

@@ -14,7 +14,11 @@ class agendamentos extends Model
      *
      * @var array<int, string>
      */
+
+    protected $guarded = [];
+
     protected $fillable = [
+        'id',
         'nome',
         'telefone',
         'origem',
@@ -22,4 +26,6 @@ class agendamentos extends Model
         'observacao',
     ];
     public $timestamps = false;
+
+    protected $data_contato = ['data_contato'];
 }
